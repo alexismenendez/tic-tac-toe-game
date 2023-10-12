@@ -1,0 +1,126 @@
+:root {
+    --darkGreen: #2C6E49;
+    --lightGreen: #4C956C;
+    --blue: #78BCE3;
+    --orange: #FD8B49;
+    --lightColor: #FEFEE3;
+    --textFont: 'Lilita One', sans-serif;
+}
+
+/* Landing Page CSS */
+
+body {
+    background-color: var(--darkGreen);
+}
+
+main {
+    margin-top: 15%;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    font-family: var(--textFont);
+}
+
+#xLogo {
+    color: var(--orange);
+}
+
+#oLogo {
+    color: var(--blue);
+}
+
+h1 {
+    display: flex;
+    font-size: 40px;
+    margin-left: 0.1%;
+    margin-right: 0.1%;
+    
+}
+
+.playerSelect {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 35%;
+    margin-right: 35%;
+    filter: drop-shadow(0px 6px #23583A);
+
+}
+
+.selectContainer {
+    background-color: var(--lightGreen);
+    display: flex;
+    flex-direction: column;
+    margin: 4% 0%;    
+    height: 200px;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#pickMarkText {
+    color: var(--lightColor);
+    font-family: var(--textFont);
+    font-size: 20px;
+    max-height: 15%;
+    display: flex;
+    align-items: center;
+
+}
+
+.optionContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    
+    align-items: flex-start;
+    height: 50%;
+}
+
+.option {
+    
+    display: flex;
+    background-color: var(--darkGreen);
+    color: var(--lightColor);
+    height: 70%;
+    width: 42%;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px var(--darkGreen);
+    transition: all 0.3s ease;
+    font-size: 50px;
+    font-family: var(--textFont);
+
+    
+}
+
+#option-x:checked,
+#option-o:checked {
+    background-color: var(--lightColor);
+    color: var(--darkGreen);
+}
+
+.landingButton {
+    margin: 2% 0%;
+    text-align: center;
+    padding: 2% 0%;
+    border-radius: 10px;
+    color: var(--lightColor);
+    font-family: var(--textFont);
+    font-size: 20px;
+}
+
+#vsComputer {
+    background-color: var(--blue);
+}
+
+#vsPlayer {
+    background-color: var(--orange);
+}
+
+/* Game Page CSS */
