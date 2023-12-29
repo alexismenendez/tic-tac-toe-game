@@ -57,7 +57,7 @@ h1 {
     height: 200px;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 #pickMarkText {
@@ -81,7 +81,6 @@ h1 {
 }
 
 .option {
-    
     display: flex;
     background-color: var(--darkGreen);
     color: var(--lightColor);
@@ -89,23 +88,29 @@ h1 {
     width: 42%;
     align-items: center;
     justify-content: space-around;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     border: 2px var(--darkGreen);
     transition: all 0.3s ease;
     font-size: 50px;
     font-family: var(--textFont);
-
-    
 }
 
-#option-x:checked,
-#option-o:checked {
+#option-x {
+    margin-left: 10%;
+}
+
+#option-o {
+    margin-right: 10%;
+}
+
+input:checked span {
     background-color: var(--lightColor);
     color: var(--darkGreen);
 }
 
 .landingButton {
+    transition: 0.2s ease;
     margin: 2% 0%;
     text-align: center;
     padding: 2% 0%;
@@ -113,6 +118,18 @@ h1 {
     color: var(--lightColor);
     font-family: var(--textFont);
     font-size: 20px;
+    cursor: pointer;
+}
+
+#vsComputer:active {
+    color: var(--blue);
+    background-color: var(--lightColor);
+}
+
+#vsPlayer:active {
+    color: var(--orange);
+    background-color: var(--lightColor);
+    
 }
 
 #vsComputer {
@@ -123,4 +140,170 @@ h1 {
     background-color: var(--orange);
 }
 
-/* Game Page CSS */
+/*///////// Game Page CSS /////////*/
+
+
+
+.gameBoard {
+    display: flex;
+    margin-top: 200px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    max-width: 435px;
+}
+
+.headBtn {
+    display: flex;
+    align-items: center;
+    margin: 6px 10px;
+    width: 125px;
+    font-family: var(--textFont);
+    color: var(--lightColor);
+    font-size: 20px;
+}
+
+#headerLogo {
+    padding-left: 1%;
+}
+
+#playerTurn {
+    justify-content: center;
+    background-color: var(--orange);
+    border-radius: 10px;
+    filter: drop-shadow(0px 3px #23583A);
+
+}
+
+#resetContain {
+    justify-content: flex-end;
+}
+
+#reset {
+    margin-right: 1%;
+    color: var(--lightColor);
+    font-size: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 435px;
+
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--lightGreen);
+    width: 125px;
+    height: 125px;
+    border-radius: 20px;
+    margin: 10px;
+    filter: drop-shadow(0px 6px #23583A);
+    cursor: pointer;
+}
+
+.scoreBoard {
+    display: flex;
+    max-width: 435px;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 125px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 3px #23583A);
+
+}
+
+.score p {
+    font-family: var(--textFont);
+    color: var(--lightColor);
+    font-size: 15px;
+    margin-top: 5%;
+}
+
+#xScoreText,
+#tiesText,
+#oScoreText {
+    font-size: 20px;
+}
+
+#xScore {
+    background-color: var(--orange);
+}
+
+#ties {
+    background-color: var(--lightGreen);
+}
+
+#oScore {
+    background-color: var(--blue);
+}
+
+.xMark {
+    font-family: var(--textFont);
+    color: var(--orange);
+    font-size: 100px;
+}
+
+.oMark {
+    font-family: var(--textFont);
+    color: var(--blue);
+    font-size: 110px;
+}
+
+/* DIALOG BOX */
+
+.dialogContain {
+    display: flex;
+    width: 1680px;
+}
+
+.xWin {
+    background-color: var(--orange);
+	border: 0;
+    width: 100%;
+    height: 200px;
+    margin-top: 10%;
+}
+
+.oWin {
+    background-color: var(--blue);
+	border: 0;
+    width: 100%;
+    height: 200px;
+    margin-top: 10%;
+}
+
+#dialog {
+    min-width: 1680px;
+    margin: auto;
+}
+
+#dialog h2 {
+    color: var(--lightColor);
+    font-family: var(--textFont);
+    font-size: 90px;
+    display: flex;
+    justify-content: center;
+    align-content: inherit;
+    padding: 3% !important;
+}
+
+#dialog::backdrop {
+    background: rgb(255 255 255 / 40%);
+    backdrop-filter: blur(20px);
+}
