@@ -5,16 +5,17 @@
     --orange: #FD8B49;
     --lightColor: #FEFEE3;
     --textFont: 'Lilita One', sans-serif;
+
+    background-color: var(--darkGreen);
 }
 
 /* Landing Page CSS */
 
-body {
-    background-color: var(--darkGreen);
-}
-
-main {
-    margin-top: 15%;
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
 }
 
 .logo {
@@ -154,12 +155,13 @@ input:checked span {
 .header {
     display: flex;
     max-width: 435px;
+    max-height: 75px;
 }
 
 .headBtn {
     display: flex;
     align-items: center;
-    margin: 6px 10px;
+    margin: 6px 8px;
     width: 125px;
     font-family: var(--textFont);
     color: var(--lightColor);
