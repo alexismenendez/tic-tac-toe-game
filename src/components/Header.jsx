@@ -1,7 +1,7 @@
 import React from "react"
 import "../styles/style.css"
 
-const Header = () => {
+const Header = ({ handleButtonClick }) => {
     return(
         <div className="header" id="header">
             <div className="headBtn" id="headerLogo">            
@@ -10,7 +10,7 @@ const Header = () => {
             </div>
             <div className="headBtn" id="playerTurn">Xs Turn</div>
             <div className="headBtn" id="resetContain">
-                <button  id="reset">
+                <button  onClick={() => handleButtonClick("Menu")} id="reset">
                     <i className="fa-solid fa-arrow-rotate-left"></i>
                 </button>
             </div>

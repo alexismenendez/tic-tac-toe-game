@@ -2,10 +2,10 @@ import React from "react"
 import "../styles/style.css"
 import Header from "./Header"
 
-const GameBoard = () => {
+const GameBoard = ({ handleButtonClick }) => {
     return(
         <div>
-            <Header />
+            <Header handleButtonClick={handleButtonClick}/>
             <div className="board" id="board">
                 <div className="cell" data-cell>
                     <p className="xMark">X</p>

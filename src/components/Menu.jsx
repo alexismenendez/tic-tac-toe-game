@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/style.css"
 
-const Menu = () => {
+const Menu = ({ handleButtonClick }) => {
+    const [userChoice, setUserChoice] = useState("X")
+
+    const handleChoiceSelection = (choice) => {
+        setUserChoice(choice)
+    }
+
+    const getButtonColor = (userChoice, option) => {
+        if (userChoice === option) {
+            return option === 'X' ? "#FD8B49" : "#78BCE3";
+        } else {
+            return "#2C6E49";
+        }
+    }
+
     return(
         <div className="Menu">
             <div className="logo">
@@ -14,17 +28,16 @@ const Menu = () => {
 
                     <p id="pickMarkText">PICK PLAYER 1&apos;S MARK</p>
 
-
                     <div className="optionContainer">
                         <input className="option" type="radio" name="player" value="playerX" />
-                        <label htmlFor="playerX">X</label>
+                        <label onClick={() => handleChoiceSelection("X")} style={{ backgroundColor: getButtonColor(userChoice, 'X') }} htmlFor="playerX">X</label>
                         <input className="option" type="radio" name="player" value="playerY" />
-                        <label htmlFor="playerY">Y</label>
+                        <label onClick={() => handleChoiceSelection("O")} style={{ backgroundColor: getButtonColor(userChoice, 'O') }} htmlFor="playerO">O</label>
                     </div>
 
                 </div>
-                {/* <btn type="submit" id="vsComputer" class="landingButton">NEW GAME (VS CPU)</btn>
-                <btn type="submit" id="vsPlayer" class="landingButton">NEW GAME (VS PLAYER)</btn> */}
+                <button onClick={() => handleButtonClick("GameBoard")} id="vsComputer" className="landingButton">NEW GAME VS CPU</button>
+                <button onClick={() => handleButtonClick("GameBoard")} id="vsPlayer" className="landingButton">NEW GAME VS PLAYER</button>
             </div>
         </div>
     )
