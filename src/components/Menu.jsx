@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/style.css"
 
 const Menu = ({ handleButtonClick }) => {
+    const [userChoice, setUserChoice] = useState("X")
+
+    const handleChoiceSelection = (choice) => {
+        setUserChoice(choice)
+    }
+
+    const getButtonColor = (userChoice, option) => {
+        if (userChoice === option) {
+            return option === 'X' ? "#FD8B49" : "#78BCE3";
+        } else {
+            return "#2C6E49";
+        }
+    }
+
     return(
         <div className="Menu">
             <div className="logo">
@@ -16,9 +30,9 @@ const Menu = ({ handleButtonClick }) => {
 
                     <div className="optionContainer">
                         <input className="option" type="radio" name="player" value="playerX" />
-                        <label onClick={() => {console.log("xClicked")}} htmlFor="playerX">X</label>
+                        <label onClick={() => handleChoiceSelection("X")} style={{ backgroundColor: getButtonColor(userChoice, 'X') }} htmlFor="playerX">X</label>
                         <input className="option" type="radio" name="player" value="playerY" />
-                        <label onClick={() => {console.log("yClicked")}} htmlFor="playerY">Y</label>
+                        <label onClick={() => handleChoiceSelection("O")} style={{ backgroundColor: getButtonColor(userChoice, 'O') }} htmlFor="playerO">O</label>
                     </div>
 
                 </div>
