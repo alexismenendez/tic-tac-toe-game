@@ -23,8 +23,8 @@ const Menu = () => {
                     </div>
 
                 </div>
-                {/* <btn type="submit" id="vsComputer" class="landingButton">NEW GAME (VS CPU)</btn>
-                <btn type="submit" id="vsPlayer" class="landingButton">NEW GAME (VS PLAYER)</btn> */}
+                <button onClick={() => {console.log("VS CPU CLICKED")}} id="vsComputer" className="landingButton">NEW GAME VS CPU</button>
+                <button onClick={() => {console.log("VS PLAYER CLICKED")}} id="vsPlayer" className="landingButton">NEW GAME VS PLAYER</button>
             </div>
         </div>
     )
