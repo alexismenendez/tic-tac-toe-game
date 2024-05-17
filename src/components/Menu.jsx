@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/style.css"
 
-const Menu = () => {
+const Menu = ({ handleButtonClick }) => {
     return(
         <div className="Menu">
             <div className="logo">
@@ -14,17 +14,16 @@ const Menu = () => {
 
                     <p id="pickMarkText">PICK PLAYER 1&apos;S MARK</p>
 
-
                     <div className="optionContainer">
                         <input className="option" type="radio" name="player" value="playerX" />
-                        <label htmlFor="playerX">X</label>
+                        <label onClick={() => {console.log("xClicked")}} htmlFor="playerX">X</label>
                         <input className="option" type="radio" name="player" value="playerY" />
-                        <label htmlFor="playerY">Y</label>
+                        <label onClick={() => {console.log("yClicked")}} htmlFor="playerY">Y</label>
                     </div>
 
                 </div>
-                <button onClick={() => {console.log("VS CPU CLICKED")}} id="vsComputer" className="landingButton">NEW GAME VS CPU</button>
-                <button onClick={() => {console.log("VS PLAYER CLICKED")}} id="vsPlayer" className="landingButton">NEW GAME VS PLAYER</button>
+                <button onClick={() => handleButtonClick("GameBoard")} id="vsComputer" className="landingButton">NEW GAME VS CPU</button>
+                <button onClick={() => handleButtonClick("GameBoard")} id="vsPlayer" className="landingButton">NEW GAME VS PLAYER</button>
             </div>
         </div>
     )

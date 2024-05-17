@@ -16,8 +16,8 @@ const App = () => {
 
   return (
     <div className='App'>
-      {activeComponent === "Menu" && <Menu />}
-      {activeComponent === "GameBoard" && <GameBoard />}
+      {activeComponent === "Menu" && <Menu handleButtonClick={handleButtonClick}/>}
+      {activeComponent === "GameBoard" && <GameBoard handleButtonClick={handleButtonClick}/>}
     </div>
   )
 }
