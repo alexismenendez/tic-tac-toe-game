@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import "../styles/style.css"
 
 const Menu = ({ handleButtonClick }) => {
+    //Sets default choice to X
     const [userChoice, setUserChoice] = useState("X")
 
+    //
     const handleChoiceSelection = (choice) => {
         setUserChoice(choice)
     }
 
+    //Changes the color of the X and O selection background upon user click
     const getButtonColor = (userChoice, option) => {
         if (userChoice === option) {
             return option === 'X' ? "#FD8B49" : "#78BCE3";
