@@ -5,6 +5,7 @@ const dialogDiv = document.querySelector(".dialogContain");
 const board = document.querySelector("#board")
 const cellEls = document.querySelectorAll(".cell");
 
+//Array for the winning combos for Xs or Os
 const winCombos = [
     [0, 1, 2],
     [3, 4, 5],
@@ -16,10 +17,10 @@ const winCombos = [
     [2, 4, 6]
 ]
 
-const cirClass = "circle";
+const oClass = "o";
 const xClass = "x";
 
-let circleTurn
+let oTurn
 
 
 resetBtn.addEventListener("click", () => {
@@ -35,15 +36,15 @@ function placeMark (cell, currentClass) {
 };
 
 function turnHandler() {
-    circleTurn = !circleTurn
+    oTurn = !oTurn
 };
 
 function boardHoverClass() {
     board.classList.remove(xClass)
-    board.classList.remove(cirClass)
+    board.classList.remove(oClass)
 
-    if (circleTurn) {
-        board.classList.add(cirClass)
+    if (oTurn) {
+        board.classList.add(oClass)
     } else {
         board.classList.add(xClass)
     }
@@ -57,11 +58,12 @@ function checkWin(currentClass) {
     })
 }
 
+//Responds to User input. Logs the click, checks the turn and then applies the respond mark, then changes the turn
 function clickHandler(event) {
     console.log("clicked")
 
     const cell = event.target
-    const currentClass = circleTurn ? cirClass : xClass
+    const currentClass = oTurn ? oClass : xClass
 
     placeMark(cell, currentClass)
     if (checkWin(currentClass)) {
@@ -73,7 +75,7 @@ function clickHandler(event) {
 };
 
 function startGame() {
-    circleTurn = false
+    oTurn = false
 
     cellEls.forEach( cell => {
         cell.addEventListener("click", clickHandler, { once: true })
@@ -83,4 +85,3 @@ function startGame() {
 }
 
 startGame()
-

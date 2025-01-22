@@ -7,9 +7,10 @@ import Menu from "./components/Menu"
 // import WinLoss from "./components/WinLoss"
 
 const App = () => {
-
+  //Starts user at the Main Menu
   const [activeComponent, setActiveComponent] = useState("Menu");
 
+  //Navigates based off user click
   const handleButtonClick = (component) => {
     setActiveComponent(component)
   }
